@@ -2,6 +2,8 @@
 
 A custom tooltip which uses vanilla javascript and CSS3 animation. It is tested in IE9+, Firefox 17+, Chrome 20+ and Safari 5.0+.
 
+I created a simple [demo page](http://www.mirellavanteulingen.nl/demos/tooltip).
+
 ## Usage
 The only files you need are:
  - tooltip.min.js
