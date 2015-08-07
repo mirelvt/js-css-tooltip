@@ -1,0 +1,83 @@
+@import "variables";
+@import "mixins";
+
+* { @include box-sizing(border-box); }
+
+// *1: Specifies a size adjustment for displaying text content on smartphones.
+// *2: Improve text-rendering in Webkit browsers and firefox on OSX.
+:root {
+  min-height: 100%;
+  position: relative;
+  @include text-size-adjust; // *2
+  -webkit-font-smoothing: antialiased; // *2
+  -moz-osx-font-smoothing: grayscale; // *2
+  font-family: $font-main;
+  color: $c-text;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  height: 100%;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: $c-main;
+  @include transition(color 0.25s);
+  &:hover { color: $c-hover }
+
+  h2 &,
+  h3 &,
+  h4 &,
+  h5 &,
+  h6 & { text-decoration: none; }
+}
+
+%generic-h {
+  margin-top: 0;
+  font-family: $font-headers;
+  font-weight: normal;
+  color: $c-main;
+  line-height: 100%;
+}
+
+// Generate headings using vw. In the breakpoint section
+// the rem units are defined.
+@for $i from 1 through 6 {
+  h#{$i} {
+    @extend %generic-h;
+
+    @if ($i == 1) {
+      font-size: 5vw;
+    }
+    @else {
+      font-size: 5vw - ($i / 2);
+    }
+  }
+}
+
+h1,
+h2 { margin-bottom: 1.5rem; }
+
+h3,
+h4,
+h5,
+h6 { margin-bottom: 0; }
+
+.visualwrapper {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+@import "fonts";

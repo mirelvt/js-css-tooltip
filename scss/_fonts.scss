@@ -1,0 +1,55 @@
+// Font Source sans pro regular for the body text,
+// Arvo for the menu, DroidSansMono for the code and Slabo for the headers.
+$fonts: (
+  "arvo": (
+    "name": "arvo",
+    "url": "Arvo-Regular",
+    "weight": "normal",
+    "type": "normal"
+  ),
+  "droidsansmono": (
+    "name": "Droid Sans Mono",
+    "url":"DroidSansMono",
+    "weight": "normal",
+    "type": "normal"
+  ),
+  "slabo": (
+    "name": "Slabo 27px",
+    "url": "Slabo27px-Regular",
+    "weight": "normal",
+    "type": "normal"
+  ),
+  "ssp-regular": (
+    "name": "Source Sans Pro",
+    "url": "SourceSansPro-Regular",
+    "weight": "normal",
+    "type": "normal"
+  ),
+  "ssp-semi-bold": (
+    "name": "Source Sans Pro",
+    "url": "SourceSansPro-Semibold",
+    "weight": "bold",
+    "type": "normal"
+  ),
+  "ssp-semi-bold-italic": (
+    "name": "Source Sans Pro",
+    "url": "SourceSansPro-SemiboldItalic",
+    "weight": "bold",
+    "type": "italic"
+  ),
+  "ssp-semi-italic": (
+    "name": "Source Sans Pro",
+    "url": "SourceSansPro-Italic",
+    "weight": "normal",
+    "type": "italic"
+  ),
+);
+
+@each $font, $props in $fonts {
+  @font-face {
+      font-family: #{map-get($props, name)};
+       src: local("#{map-get($props, name)}"), url('../fonts/#{map-get($props, url)}.ttf') format('truetype');
+      font-weight: #{map-get($props, weight)};
+      font-style: #{map-get($props, type)};
+    }
+}

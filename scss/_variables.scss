@@ -1,0 +1,18 @@
+$c-text: #3c4946;
+$c-main: #a7ad7e;
+$c-shadow: #3C4946;
+$c-hover: darken($c-main, 15%);
+$c-header: #f7a14d;
+$color-maintitle: $c-header;
+$color-subtitle: #a9a9a9;
+$code-indent: 12px;
+$bg-code: rgba(#c8d1cf, 0.15);
+
+$font-generic: arial, helvetica, sans-serif;
+$font-main: "Source Sans Pro", $font-generic;
+$font-headers: "Slabo 27px", $font-generic;
+$font-menu: Arvo, $font-generic;
+$font-code: "Droid Sans Mono", $font-generic;
+
+$w-touch: 36px;
+$w-menu: 230px;

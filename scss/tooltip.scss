@@ -1,0 +1,111 @@
+@import "variables";
+@import "generic";
+
+// =======
+// TOOLTIP
+// -------
+.no-display { display: none; }
+
+.tooltip-container {
+  position: absolute;
+  max-width: 200px;
+  padding: 8px 10px 10px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  background-color: #2d2d2d;
+  color: #fff;
+  border-radius: 4px;
+  opacity: 1; // scale animation setting
+  @include transform(translateZ(0)); // GPU
+  // @include transition(opacity 0.65s ease-in-out); simple opacity animation
+
+  &[class*=" tooltip-"] {
+    // opacity: 1; simple opacity animation
+    @include animation(box-anim-2 0.8s);}
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+  }
+
+  // position arrow on the right of the toolbox
+  &.tooltip-left:after {
+    right: -8px;
+    top: 50%;
+    @include transform(translateY(-50%));
+    border: {
+      style: solid;
+      width: 6px 0 6px 8px;
+      color: transparent transparent transparent #2d2d2d;
+    }
+  }
+
+  // position arrow on the left of the toolbox
+  &.tooltip-right:after {
+    left: -8px;
+    top: 50%;
+    @include transform(translateY(-50%));
+    border: {
+      style: solid;
+      width: 6px 8px 6px 0;
+      color: transparent #2d2d2d transparent transparent;
+    }
+  }
+
+  // position arrow in the top center of the toolbox
+  &.tooltip-center:after {
+    top: -8px;
+    left: 50%;
+    @include transform(translateX(-50%));
+    border: {
+      style: solid;
+      width: 0 6px 8px 6px;
+      color: transparent transparent #2d2d2d transparent;
+    }
+  }
+}
+
+[data-toggle="tooltip"] {
+  cursor: pointer;
+  color: $c-main;
+  display: inline-block;
+}
+
+// Example with scale animation
+@include keyframes(box-anim-2) {
+  0% {
+    opacity: 0;
+    @include transform(matrix(0.5, 0, 0, 0.8, 0, 0));
+  }
+  20% { @include transform(matrix(1.1, 0, 0, 1.1, 0, 0)) }
+  40% { opacity: 1; }
+  70% { @include transform(matrix(1, 0, 0, 1, 0, 0)) }
+  100% { @include transform(matrix(1, 0, 0, 1, 0, 0)) }
+}
+
+
+// Just an example of elm which are positioned on the left or right of the window
+.tooltip-example {
+  &-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+}
+
+.overflow-test {
+  height: 35px;
+  overflow: hidden;
+  background-color: rgba(#ccc, 0.5);
+}
+
+// ------------
+// @END TOOLTIP
+// ============
