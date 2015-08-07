@@ -6,7 +6,7 @@ A custom tooltip which uses vanilla javascript and CSS3 animation. It is tested 
 The only files you need are: tooltip.js, tooltip.scss and _mixins.scss.
 
 Add the tooltip.js file in the bottom of the body:
-```
+```html
 <script src="tooltip.js" type="text/javascript"></script>
 ```
 
