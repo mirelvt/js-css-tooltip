@@ -3,7 +3,10 @@
 A custom tooltip which uses vanilla javascript and CSS3 animation. It is tested in IE9+, Firefox 17+, Chrome 20+ and Safari 5.0+.
 
 ## Usage
-The only files you need are: tooltip.js, tooltip.scss and _mixins.scss.
+The only files you need are:
+ - tooltip.min.js
+ - tooltip.scss
+ - _mixins.scss
 
 Add the tooltip.js file in the bottom of the body:
 ```html
