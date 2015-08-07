@@ -1,6 +1,19 @@
 @import "variables";
 @import "mixins";
 
+
+@mixin box-sizing($value) {
+    -moz-box-sizing: $value;
+    -webkit-box-sizing: $value;
+    box-sizing: $value;
+}
+
+@mixin text-size-adjust {
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 * { @include box-sizing(border-box); }
 
 // *1: Specifies a size adjustment for displaying text content on smartphones.
