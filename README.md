@@ -11,12 +11,12 @@ Add the tooltip.js file in the bottom of the body:
 ```
 
 Add the css file to your html page:
-```
+```html
 <link rel="stylesheet" type="text/css" href="tooltip.css">
 ```
 
-To create a tooltip add, the attributes data-toggle="tooltip" and data-title="" to your element, for example:
-```
+To create a tooltip, add the attributes **data-toggle="tooltip"** and **data-title=""** to your element, for example:
+```html
 <span data-toggle="tooltip" data-title="My tooltip text">Show my tooltip</span>
 ```
 
