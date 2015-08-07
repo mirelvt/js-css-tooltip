@@ -80,4 +80,25 @@ h6 { margin-bottom: 0; }
     background-color: #fff;
 }
 
+// Just an example of elm which are positioned on the left or right of the window
+.tooltip-example {
+  &-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+}
+
+.overflow-test {
+  height: 35px;
+  overflow: hidden;
+  background-color: rgba(#ccc, 0.5);
+}
+
 @import "fonts";

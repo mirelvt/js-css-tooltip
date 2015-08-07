@@ -17,11 +17,9 @@
   border-radius: 4px;
   opacity: 1; // scale animation setting
   @include transform(translateZ(0)); // GPU
-  // @include transition(opacity 0.65s ease-in-out); simple opacity animation
 
   &[class*=" tooltip-"] {
-    // opacity: 1; simple opacity animation
-    @include animation(box-anim-2 0.8s);}
+    @include animation(tooltip-anim 0.8s);}
 
   &:after {
     position: absolute;
@@ -72,8 +70,7 @@
   display: inline-block;
 }
 
-// Example with scale animation
-@include keyframes(box-anim-2) {
+@include keyframes(tooltip-anim) {
   0% {
     opacity: 0;
     @include transform(matrix(0.5, 0, 0, 0.8, 0, 0));
@@ -82,28 +79,6 @@
   40% { opacity: 1; }
   70% { @include transform(matrix(1, 0, 0, 1, 0, 0)) }
   100% { @include transform(matrix(1, 0, 0, 1, 0, 0)) }
-}
-
-
-// Just an example of elm which are positioned on the left or right of the window
-.tooltip-example {
-  &-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  &-left {
-    position: absolute;
-    top: 50%;
-    left: 0;
-  }
-}
-
-.overflow-test {
-  height: 35px;
-  overflow: hidden;
-  background-color: rgba(#ccc, 0.5);
 }
 
 // ------------

@@ -77,6 +77,20 @@ h6 {
   padding: 2rem;
   background-color: #fff; }
 
+.tooltip-example-right {
+  position: absolute;
+  top: 0;
+  right: 0; }
+.tooltip-example-left {
+  position: absolute;
+  top: 50%;
+  left: 0; }
+
+.overflow-test {
+  height: 35px;
+  overflow: hidden;
+  background-color: rgba(204, 204, 204, 0.5); }
+
 @font-face {
   font-family: arvo;
   src: local("arvo"), url("../fonts/Arvo-Regular.ttf") format("truetype");
@@ -130,10 +144,10 @@ h6 {
   -webkit-transform: translateZ(0);
   transform: translateZ(0); }
   .tooltip-container[class*=" tooltip-"] {
-    -webkit-animation: box-anim-2 0.8s;
-    -moz-animation: box-anim-2 0.8s;
-    -o-animation: box-anim-2 0.8s;
-    animation: box-anim-2 0.8s; }
+    -webkit-animation: tooltip-anim 0.8s;
+    -moz-animation: tooltip-anim 0.8s;
+    -o-animation: tooltip-anim 0.8s;
+    animation: tooltip-anim 0.8s; }
   .tooltip-container:after {
     position: absolute;
     display: block;
@@ -174,7 +188,7 @@ h6 {
   color: #a7ad7e;
   display: inline-block; }
 
-@keyframes box-anim-2 {
+@keyframes tooltip-anim {
   0% {
     opacity: 0;
     -ms-transform: matrix(0.5, 0, 0, 0.8, 0, 0);
@@ -198,7 +212,7 @@ h6 {
     -moz-transform: matrix(1, 0, 0, 1, 0, 0);
     -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
     transform: matrix(1, 0, 0, 1, 0, 0); } }
-@-webkit-keyframes box-anim-2 {
+@-webkit-keyframes tooltip-anim {
   0% {
     opacity: 0;
     -ms-transform: matrix(0.5, 0, 0, 0.8, 0, 0);
@@ -222,18 +236,5 @@ h6 {
     -moz-transform: matrix(1, 0, 0, 1, 0, 0);
     -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
     transform: matrix(1, 0, 0, 1, 0, 0); } }
-.tooltip-example-right {
-  position: absolute;
-  top: 0;
-  right: 0; }
-.tooltip-example-left {
-  position: absolute;
-  top: 50%;
-  left: 0; }
-
-.overflow-test {
-  height: 35px;
-  overflow: hidden;
-  background-color: rgba(204, 204, 204, 0.5); }
 
 /*# sourceMappingURL=tooltip.css.map */

@@ -1,19 +1,11 @@
 (function() {
     "use strict";
 
-    function tooltipComponent(container) {
-        var elm, tooltip_text, elm_edges,
-            tooltip = container.querySelector('.tooltip-container'),
-            tooltip_elms = container.querySelectorAll('[data-toggle]');
+    var tooltip, elm_edges, tooltip_text;
 
-        for (var i = 0; i < tooltip_elms.length; i++) {
-            tooltip_elms[i].addEventListener('mouseover', showTooltip, false);
-            tooltip_elms[i].addEventListener('mouseout', hideTooltip, false);
-        };
-
-        function showTooltip(evt) {
-            elm = evt.target;
-            elm_edges = elm.getBoundingClientRect(); // relative to the viewport
+    var Tooltip =  {
+        create: function(tooltip, elm) {
+            elm_edges = elm.getBoundingClientRect(); // relative to the viewport;
             tooltip_text = document.createTextNode(elm.getAttribute('data-title'));
             tooltip.appendChild(tooltip_text);
 
@@ -26,18 +18,8 @@
             } else {
                 tooltip.className = 'tooltip-container tooltip-center';
             }
-            posTooltip(elm, tooltip);
-        }
-
-        // Reset tooltip to hidden state
-        function hideTooltip(evt) {
-            elm = evt.target;
-            tooltip.className = 'tooltip-container no-display';
-            tooltip.removeChild(tooltip.firstChild);
-            tooltip.removeAttribute('style');
-        }
-
-        function posTooltip(elm, tooltip) {
+        },
+        position: function(tooltip, elm) {
             var elm_top = elm.offsetTop + elm_edges.height + 10; // 10 = arrow height
 
             // position tooltip on the left side of the elm.
@@ -45,8 +27,7 @@
             if (elm_edges.left > (window.innerWidth - 100)) {
                 tooltip.style.left = (elm_edges.left - 220) + 'px';
                 tooltip.style.top = elm.offsetTop + 'px';
-            }
-            else if ((elm_edges.left + (elm_edges.width / 2)) < 100) {
+            } else if ((elm_edges.left + (elm_edges.width / 2)) < 100) {
                 // position tooltip on the right side of the elm.
                 tooltip.style.left = (elm_edges.left + elm_edges.width + 20) + 'px';
                 tooltip.style.top = elm.offsetTop + 'px';
@@ -56,11 +37,29 @@
                 tooltip.style.left = centered + 'px';
                 tooltip.style.top = elm_top + 'px';
             }
-        }
+        },
+    };
+
+    function showTooltip(evt) {
+        var item = Object.create(Tooltip);
+        item.create(tooltip, evt.target);
+        item.position(tooltip, evt.target);
+    }
+
+    function hideTooltip() {
+        tooltip.className = 'tooltip-container no-display';
+        tooltip.removeChild(tooltip.firstChild);
+        tooltip.removeAttribute('style');
     }
 
     function onReady() {
-        tooltipComponent(document.querySelector('body'));
+        tooltip = document.documentElement.querySelector('.tooltip-container');
+        var tooltip_elms = document.documentElement.querySelectorAll('[data-toggle]');
+
+        for (var i = 0; i < tooltip_elms.length; i++) {
+            tooltip_elms[i].addEventListener('mouseover',  showTooltip , false);
+            tooltip_elms[i].addEventListener('mouseout', hideTooltip, false);
+        }
     }
 
     document.addEventListener('DOMContentLoaded', onReady, false);
