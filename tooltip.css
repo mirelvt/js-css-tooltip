@@ -41,24 +41,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #a7ad7e;
   line-height: 100%; }
 
-h1 {
-  font-size: 5vw; }
-
-h2 {
-  font-size: 4vw; }
-
-h3 {
-  font-size: 3.5vw; }
-
-h4 {
-  font-size: 3vw; }
-
-h5 {
-  font-size: 2.5vw; }
-
-h6 {
-  font-size: 2vw; }
-
 h1,
 h2 {
   margin-bottom: 1.5rem; }
@@ -91,6 +73,45 @@ h6 {
   overflow: hidden;
   background-color: rgba(204, 204, 204, 0.5); }
 
+@media screen and (max-device-width: 600px) {
+  h1 {
+    font-size: 3.6rem; }
+
+  h2 {
+    font-size: 2.6rem; }
+
+  h3 {
+    font-size: 2.3rem; }
+
+  h4 {
+    font-size: 2rem; }
+
+  h5 {
+    font-size: 1.7rem; }
+
+  h6 {
+    font-size: 1.4rem; } }
+@media screen and (min-device-width: 900px) {
+  body {
+    font-size: 1.8rem; }
+
+  h1 {
+    font-size: 4.6rem; }
+
+  h2 {
+    font-size: 3.2rem; }
+
+  h3 {
+    font-size: 2.9rem; }
+
+  h4 {
+    font-size: 2.6rem; }
+
+  h5 {
+    font-size: 2.3rem; }
+
+  h6 {
+    font-size: 2.0rem; } }
 @font-face {
   font-family: arvo;
   src: local("arvo"), url("../fonts/Arvo-Regular.ttf") format("truetype");
