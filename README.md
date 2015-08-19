@@ -1,10 +1,11 @@
-# js-css-tooltip
+# js-css-tooltip 1.0
 
 A custom tooltip which uses vanilla javascript and CSS3 animation. It is tested in IE9+, Firefox 17+, Chrome 20+ and Safari 5.0+.
 
 I created a simple [demo page](http://www.mirellavanteulingen.nl/demos/tooltip).
 
 ## Usage
+
 The only files you need are:
  - tooltip.min.js
  - tooltip.scss
@@ -29,3 +30,4 @@ That's all you need to do.
 
 ## Customize .scss
 If you want to use other colors for the tooltip, just change the colors in the tooltip.scss file.
+

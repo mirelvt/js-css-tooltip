@@ -1,3 +1,12 @@
+/*
+ * JS CSS Tooltip v1.0
+ * https://github.com/mirelvt/js-css-tooltip
+ *
+ * Released under the MIT license
+ *
+ * Date: 2015-08-19
+ */
+
 (function() {
     "use strict";
 
