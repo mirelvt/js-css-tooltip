@@ -11,14 +11,14 @@ The only files you need are:
  - tooltip.scss
  - _mixins.scss
 
-Add the tooltip.js file in the bottom of the body:
+Add the tooltip.min.js file in the bottom of the body:
 ```html
-<script src="tooltip.js" type="text/javascript"></script>
+<script src="tooltip.min.js" type="text/javascript"></script>
 ```
 
 Add the css file to your html page:
 ```html
-<link rel="stylesheet" type="text/css" href="tooltip.css">
+<link rel="stylesheet" type="text/css" href="css/tooltip.min.css">
 ```
 
 To create a tooltip, add the attributes **data-toggle="tooltip"** and **data-title=""** to your element, for example:
