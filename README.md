@@ -1,4 +1,4 @@
-# js-css-tooltip 1.0
+# js-css-tooltip 1.1
 
 A custom tooltip which uses vanilla javascript and CSS3 animation. It is tested in IE9+, Firefox 17+, Chrome 20+ and Safari 5.0+.
 

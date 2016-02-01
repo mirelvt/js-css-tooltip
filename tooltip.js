@@ -1,10 +1,10 @@
 /*
- * JS CSS Tooltip v1.0
+ * JS CSS Tooltip v1.1
  * https://github.com/mirelvt/js-css-tooltip
  *
  * Released under the MIT license
  *
- * Date: 2015-08-19
+ * Date: 2016-02-01
  */
 
 (function() {
@@ -65,10 +65,10 @@
         tooltip = document.documentElement.querySelector('.tooltip-container');
         var tooltip_elms = document.documentElement.querySelectorAll('[data-toggle]');
 
-        for (var i = 0; i < tooltip_elms.length; i++) {
-            tooltip_elms[i].addEventListener('mouseover',  showTooltip , false);
-            tooltip_elms[i].addEventListener('mouseout', hideTooltip, false);
-        }
+        Array.prototype.forEach.call(tooltip_elms, function(elm) {
+            elm.addEventListener('mouseover',  showTooltip , false);
+            elm.addEventListener('mouseout', hideTooltip, false);
+        });
     }
 
     document.addEventListener('DOMContentLoaded', onReady, false);
