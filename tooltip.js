@@ -29,7 +29,7 @@
             }
         },
         position: function(tooltip, elm) {
-            var elm_top = elm.offsetTop + elm_edges.height + 10; // 10 = arrow height
+            var elm_top = elm_edges.top + elm_edges.height + 10; // 10 = arrow height
 
             // position tooltip on the left side of the elm.
             // 220 = the max width + arrow width of the tooltip.
@@ -51,8 +51,8 @@
 
     function showTooltip(evt) {
         var item = Object.create(Tooltip);
-        item.create(tooltip, evt.target);
-        item.position(tooltip, evt.target);
+        item.create(tooltip, evt.currentTarget);
+        item.position(tooltip, evt.currentTarget);
     }
 
     function hideTooltip() {
