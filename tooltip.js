@@ -1,10 +1,10 @@
 /*
- * JS CSS Tooltip v1.1
+ * JS CSS Tooltip v1.2
  * https://github.com/mirelvt/js-css-tooltip
  *
  * Released under the MIT license
  *
- * Date: 2016-02-01
+ * Date: 2016-02-29
  */
 
 (function() {
@@ -15,7 +15,7 @@
     var Tooltip =  {
         create: function(tooltip, elm) {
             elm_edges = elm.getBoundingClientRect(); // relative to the viewport;
-            tooltip_text = document.createTextNode(elm.getAttribute('data-title'));
+            tooltip_text = document.createTextNode(elm.getAttribute('data-tooltip'));
             tooltip.appendChild(tooltip_text);
 
             // Remove no-display + set the correct classname based on the position
@@ -63,7 +63,7 @@
 
     function onReady() {
         tooltip = document.documentElement.querySelector('.tooltip-container');
-        var tooltip_elms = document.documentElement.querySelectorAll('[data-toggle]');
+        var tooltip_elms = document.documentElement.querySelectorAll('[data-tooltip]');
 
         Array.prototype.forEach.call(tooltip_elms, function(elm) {
             elm.addEventListener('mouseover',  showTooltip , false);

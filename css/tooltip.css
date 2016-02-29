@@ -111,7 +111,7 @@ h6 {
     font-size: 2.3rem; }
 
   h6 {
-    font-size: 2.0rem; } }
+    font-size: 2rem; } }
 @font-face {
   font-family: arvo;
   src: local("arvo"), url("../fonts/Arvo-Regular.ttf") format("truetype");
@@ -204,7 +204,7 @@ h6 {
     border-width: 0 6px 8px 6px;
     border-color: transparent transparent #2d2d2d transparent; }
 
-[data-toggle="tooltip"] {
+[data-tooltip] {
   cursor: pointer;
   color: #a7ad7e;
   display: inline-block; }
