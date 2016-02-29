@@ -11,8 +11,9 @@ The only files you need are:
  - tooltip.scss
  - _mixins.scss
 
-Add the tooltip.min.js file in the bottom of the body:
+Add the tooltip.min.js and tooltip container at the bottom of the body:
 ```html
+<div class="tooltip-container no-display"></div>
 <script src="tooltip.min.js" type="text/javascript"></script>
 ```
 
