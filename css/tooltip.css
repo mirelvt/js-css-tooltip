@@ -11,6 +11,7 @@
   height: 100%;
   min-height: 100%;
   font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+  font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #3c4946; }
@@ -18,8 +19,7 @@
 body {
   height: 100%;
   margin: 0;
-  font-size: 1.8rem;
-  line-height: 2.2rem; }
+  font-size: 2.2rem; }
 
 p {
   margin-top: 0;
@@ -91,9 +91,6 @@ h6 {
   h6 {
     font-size: 1.4rem; } }
 @media screen and (min-device-width: 900px) {
-  body {
-    font-size: 1.8rem; }
-
   h1 {
     font-size: 4.6rem; }
 
@@ -142,8 +139,7 @@ h6 {
   position: absolute;
   max-width: 200px;
   padding: 8px 10px 10px;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1.6rem;
   background-color: #2d2d2d;
   color: #fff;
   border-radius: 4px;
