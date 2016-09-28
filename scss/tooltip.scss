@@ -8,78 +8,80 @@
 .no-display { display: none; }
 
 .tooltip-container {
-  position: absolute;
-  max-width: 200px;
-  padding: 8px 10px 10px;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  background-color: #2d2d2d;
-  color: #fff;
-  border-radius: 4px;
-  opacity: 1; // scale animation setting
-  @include transform(translateZ(0)); // GPU
-
-  &[class*=" tooltip-"] {
-    @include animation(tooltip-anim 0.8s);}
-
-  &:after {
+    @include transform(translateZ(0)); // GPU
     position: absolute;
-    display: block;
-    content: "";
-  }
+    max-width: 200px;
+    padding: 8px 10px 10px;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    background-color: #2d2d2d;
+    color: #fff;
+    border-radius: 4px;
+    opacity: 1; // scale animation setting
 
-  // position arrow on the right of the toolbox
-  &.tooltip-left:after {
-    right: -8px;
-    top: 50%;
-    @include transform(translateY(-50%));
-    border: {
-      style: solid;
-      width: 6px 0 6px 8px;
-      color: transparent transparent transparent #2d2d2d;
+    &[class*=" tooltip-"] {
+        @include animation(tooltip-anim 0.8s);
     }
-  }
 
-  // position arrow on the left of the toolbox
-  &.tooltip-right:after {
-    left: -8px;
-    top: 50%;
-    @include transform(translateY(-50%));
-    border: {
-      style: solid;
-      width: 6px 8px 6px 0;
-      color: transparent #2d2d2d transparent transparent;
+    &::after {
+        position: absolute;
+        display: block;
+        content: "";
     }
-  }
 
-  // position arrow in the top center of the toolbox
-  &.tooltip-center:after {
-    top: -8px;
-    left: 50%;
-    @include transform(translateX(-50%));
-    border: {
-      style: solid;
-      width: 0 6px 8px 6px;
-      color: transparent transparent #2d2d2d transparent;
+    // position arrow on the right of the toolbox
+    &.tooltip-left::after {
+        right: -8px;
+        top: 50%;
+        @include transform(translateY(-50%));
+        border: {
+            style: solid;
+            width: 6px 0 6px 8px;
+            color: transparent transparent transparent #2d2d2d;
+        }
     }
-  }
+
+    // position arrow on the left of the toolbox
+    &.tooltip-right::after {
+        left: -8px;
+        top: 50%;
+        @include transform(translateY(-50%));
+        border: {
+            style: solid;
+            width: 6px 8px 6px 0;
+            color: transparent #2d2d2d transparent transparent;
+        }
+    }
+
+    // position arrow in the top center of the toolbox
+    &.tooltip-center::after {
+        top: -8px;
+        left: 50%;
+        @include transform(translateX(-50%));
+        border: {
+            style: solid;
+            width: 0 6px 8px 6px;
+            color: transparent transparent #2d2d2d transparent;
+        }
+    }
 }
 
 [data-tooltip] {
-  cursor: pointer;
-  color: #a7ad7e;
-  display: inline-block;
+    cursor: pointer;
+    color: #7cb342;
+    display: inline-block;
 }
 
 @include keyframes(tooltip-anim) {
-  0% {
-    opacity: 0;
-    @include transform(matrix(0.5, 0, 0, 0.8, 0, 0));
-  }
-  20% { @include transform(matrix(1.1, 0, 0, 1.1, 0, 0)) }
-  40% { opacity: 1; }
-  70% { @include transform(matrix(1, 0, 0, 1, 0, 0)) }
-  100% { @include transform(matrix(1, 0, 0, 1, 0, 0)) }
+    0% {
+        opacity: 0;
+        @include transform(matrix(0.5, 0, 0, 0.8, 0, 0));
+    }
+
+    20% { @include transform(matrix(1.1, 0, 0, 1.1, 0, 0)) }
+    40% { opacity: 1; }
+    70% { @include transform(matrix(1, 0, 0, 1, 0, 0)) }
+    100% { @include transform(matrix(1, 0, 0, 1, 0, 0)) }
 }
 
 // ------------
