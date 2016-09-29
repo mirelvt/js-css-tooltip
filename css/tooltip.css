@@ -1,12 +1,7 @@
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 :root {
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   position: relative;
   height: 100%;
   min-height: 100%;
@@ -14,6 +9,9 @@
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   color: #3c4946; }
 
 body {
@@ -31,24 +29,21 @@ a {
   color: #7cb342; }
   a:hover {
     color: #558b2f; }
-  h2 a, h3 a, h4 a, h5 a, h6 a {
-    text-decoration: none; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h3 {
   margin-top: 0;
   font-weight: normal;
   color: #7cb342;
   line-height: 100%; }
 
-h1,
-h2 {
-  margin-bottom: 1.5rem; }
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 4.6rem; }
 
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0; }
+h3 {
+  margin-bottom: 0;
+  font-size: 3.2rem; }
 
 .visualwrapper {
   width: 100%;
@@ -58,12 +53,12 @@ h6 {
   padding: 2rem 8rem;
   background-color: #fff; }
 
+.tooltip-example-right, .tooltip-example-left {
+  position: absolute; }
 .tooltip-example-right {
-  position: absolute;
   top: 0;
   right: 0; }
 .tooltip-example-left {
-  position: absolute;
   top: 50%;
   left: 0; }
 
@@ -72,42 +67,6 @@ h6 {
   overflow: hidden;
   background-color: rgba(204, 204, 204, 0.5); }
 
-@media screen and (max-device-width: 600px) {
-  h1 {
-    font-size: 3.6rem; }
-
-  h2 {
-    font-size: 2.6rem; }
-
-  h3 {
-    font-size: 2.3rem; }
-
-  h4 {
-    font-size: 2rem; }
-
-  h5 {
-    font-size: 1.7rem; }
-
-  h6 {
-    font-size: 1.4rem; } }
-@media screen and (min-device-width: 900px) {
-  h1 {
-    font-size: 4.6rem; }
-
-  h2 {
-    font-size: 3.2rem; }
-
-  h3 {
-    font-size: 2.9rem; }
-
-  h4 {
-    font-size: 2.6rem; }
-
-  h5 {
-    font-size: 2.3rem; }
-
-  h6 {
-    font-size: 2rem; } }
 @font-face {
   font-family: Source Sans Pro;
   src: local("Source Sans Pro"), url("../fonts/SourceSansPro-Regular.ttf") format("truetype");

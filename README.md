@@ -1,4 +1,4 @@
-# js-css-tooltip 1.2
+# js-css-tooltip 1.2.1
 
 A custom tooltip which uses vanilla javascript and CSS3 animation.
 It is tested in IE9+, Firefox 17+, Chrome 20+ and Safari 5.0+.
@@ -33,4 +33,9 @@ That's it.
 
 ## Customize .scss
 If you want to use other colors for the tooltip, just change the colors in the tooltip.scss file.
+
+## Releases
+2016-09-29 v1.2.1: Refactor code.
+2015-08-19  v1.0: First release.
+
 

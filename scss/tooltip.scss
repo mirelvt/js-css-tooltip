@@ -28,7 +28,7 @@
         content: "";
     }
 
-    // position arrow on the right of the toolbox
+    // position arrow on the right of the tooltip
     &.tooltip-left::after {
         right: -8px;
         top: 50%;
@@ -40,7 +40,7 @@
         }
     }
 
-    // position arrow on the left of the toolbox
+    // position arrow on the left of the tooltip
     &.tooltip-right::after {
         left: -8px;
         top: 50%;
@@ -52,7 +52,7 @@
         }
     }
 
-    // position arrow in the top center of the toolbox
+    // position arrow in the top center of the tooltip
     &.tooltip-center::after {
         top: -8px;
         left: 50%;

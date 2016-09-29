@@ -1,10 +1,10 @@
 /*
- * JS CSS Tooltip v1.2
+ * JS CSS Tooltip v1.2.1
  * https://github.com/mirelvt/js-css-tooltip
  *
  * Released under the MIT license
  *
- * Date: 2016-02-29
+ * Date: 2016-09-29
  */
 
 (function() {
