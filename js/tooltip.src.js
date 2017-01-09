@@ -30,13 +30,21 @@
         },
         position: function(tooltip, elm) {
             var elm_top = elm_edges.top + elm_edges.height + 10; // 10 = arrow height
+            var viewport_edges = window.innerWidth - 100;
 
-            // position tooltip on the left side of the elm.
-            // 220 = the max width + arrow width of the tooltip.
-            if (elm_edges.left > (window.innerWidth - 100)) {
-                tooltip.style.left = (elm_edges.left - 220) + 'px';
+            // Position tooltip on the left side of the elm if the elm touches
+            // the viewports right edge and elm width is < 50px.
+            if (elm_edges.left > viewport_edges && elm_edges.width < 50) {
+                tooltip.style.left = (elm_edges.left - (tooltip.offsetWidth + elm_edges.width)) + 'px';
                 tooltip.style.top = elm.offsetTop + 'px';
-            } else if ((elm_edges.left + (elm_edges.width / 2)) < 100) {
+            }
+            // Position tooltip on the left side of the elm if the elm touches
+            // the viewports right edge and elm width is > 50px.
+            else if (elm_edges.left > viewport_edges && elm_edges.width > 50) {
+                tooltip.style.left = (elm_edges.left - tooltip.offsetWidth - 20) + 'px';
+                tooltip.style.top = elm.offsetTop + 'px';
+            }
+            else if ((elm_edges.left + (elm_edges.width / 2)) < 100) {
                 // position tooltip on the right side of the elm.
                 tooltip.style.left = (elm_edges.left + elm_edges.width + 20) + 'px';
                 tooltip.style.top = elm.offsetTop + 'px';
