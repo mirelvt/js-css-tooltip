@@ -24,7 +24,6 @@ p {
   margin-bottom: 1.5rem; }
 
 a {
-  -webkit-transition: color 0.25s;
   transition: color 0.25s;
   color: #7cb342; }
   a:hover {
@@ -91,9 +90,6 @@ h3 {
   display: none; }
 
 .tooltip-container {
-  -ms-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
   position: absolute;
   max-width: 200px;
@@ -115,9 +111,6 @@ h3 {
   .tooltip-container.tooltip-left::after {
     right: -8px;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     border-style: solid;
     border-width: 6px 0 6px 8px;
@@ -125,9 +118,6 @@ h3 {
   .tooltip-container.tooltip-right::after {
     left: -8px;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     border-style: solid;
     border-width: 6px 8px 6px 0;
@@ -135,9 +125,6 @@ h3 {
   .tooltip-container.tooltip-center::after {
     top: -8px;
     left: 50%;
-    -ms-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     border-style: solid;
     border-width: 0 6px 8px 6px;
@@ -151,50 +138,26 @@ h3 {
 @keyframes tooltip-anim {
   0% {
     opacity: 0;
-    -ms-transform: matrix(0.5, 0, 0, 0.8, 0, 0);
-    -moz-transform: matrix(0.5, 0, 0, 0.8, 0, 0);
-    -webkit-transform: matrix(0.5, 0, 0, 0.8, 0, 0);
     transform: matrix(0.5, 0, 0, 0.8, 0, 0); }
   20% {
-    -ms-transform: matrix(1.1, 0, 0, 1.1, 0, 0);
-    -moz-transform: matrix(1.1, 0, 0, 1.1, 0, 0);
-    -webkit-transform: matrix(1.1, 0, 0, 1.1, 0, 0);
     transform: matrix(1.1, 0, 0, 1.1, 0, 0); }
   40% {
     opacity: 1; }
   70% {
-    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
     transform: matrix(1, 0, 0, 1, 0, 0); }
   100% {
-    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
     transform: matrix(1, 0, 0, 1, 0, 0); } }
 @-webkit-keyframes tooltip-anim {
   0% {
     opacity: 0;
-    -ms-transform: matrix(0.5, 0, 0, 0.8, 0, 0);
-    -moz-transform: matrix(0.5, 0, 0, 0.8, 0, 0);
-    -webkit-transform: matrix(0.5, 0, 0, 0.8, 0, 0);
     transform: matrix(0.5, 0, 0, 0.8, 0, 0); }
   20% {
-    -ms-transform: matrix(1.1, 0, 0, 1.1, 0, 0);
-    -moz-transform: matrix(1.1, 0, 0, 1.1, 0, 0);
-    -webkit-transform: matrix(1.1, 0, 0, 1.1, 0, 0);
     transform: matrix(1.1, 0, 0, 1.1, 0, 0); }
   40% {
     opacity: 1; }
   70% {
-    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
     transform: matrix(1, 0, 0, 1, 0, 0); }
   100% {
-    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
     transform: matrix(1, 0, 0, 1, 0, 0); } }
 
 /*# sourceMappingURL=tooltip.css.map */
