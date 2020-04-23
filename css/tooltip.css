@@ -1,5 +1,30 @@
+@font-face {
+  font-family: Source Sans Pro;
+  src: local("Source Sans Pro"), url("../fonts/SourceSansPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Source Sans Pro;
+  src: local("Source Sans Pro"), url("../fonts/SourceSansPro-Semibold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Source Sans Pro;
+  src: local("Source Sans Pro"), url("../fonts/SourceSansPro-SemiboldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: Source Sans Pro;
+  src: local("Source Sans Pro"), url("../fonts/SourceSansPro-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 :root {
   position: relative;
@@ -12,37 +37,45 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #3c4946; }
+  color: #3c4946;
+}
 
 body {
   height: 100%;
   margin: 0;
-  font-size: 2.2rem; }
+  font-size: 2.2rem;
+}
 
 p {
   margin-top: 0;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+}
 
 a {
   transition: color 0.25s;
-  color: #7cb342; }
-  a:hover {
-    color: #558b2f; }
+  color: #7cb342;
+}
+a:hover {
+  color: #558b2f;
+}
 
 h1,
 h3 {
   margin-top: 0;
   font-weight: normal;
   color: #7cb342;
-  line-height: 100%; }
+  line-height: 100%;
+}
 
 h1 {
   margin-bottom: 1.5rem;
-  font-size: 4.6rem; }
+  font-size: 4.6rem;
+}
 
 h3 {
   margin-bottom: 0;
-  font-size: 3.2rem; }
+  font-size: 3.2rem;
+}
 
 .visualwrapper {
   width: 100%;
@@ -50,44 +83,30 @@ h3 {
   min-height: 100%;
   margin: 0 auto;
   padding: 2rem 8rem;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .tooltip-example-right, .tooltip-example-left {
-  position: absolute; }
+  position: absolute;
+}
 .tooltip-example-right {
   top: 0;
-  right: 0; }
+  right: 0;
+}
 .tooltip-example-left {
   top: 50%;
-  left: 0; }
+  left: 0;
+}
 
 .overflow-test {
   height: 35px;
   overflow: hidden;
-  background-color: rgba(204, 204, 204, 0.5); }
+  background-color: rgba(204, 204, 204, 0.5);
+}
 
-@font-face {
-  font-family: Source Sans Pro;
-  src: local("Source Sans Pro"), url("../fonts/SourceSansPro-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: Source Sans Pro;
-  src: local("Source Sans Pro"), url("../fonts/SourceSansPro-Semibold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal; }
-@font-face {
-  font-family: Source Sans Pro;
-  src: local("Source Sans Pro"), url("../fonts/SourceSansPro-SemiboldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic; }
-@font-face {
-  font-family: Source Sans Pro;
-  src: local("Source Sans Pro"), url("../fonts/SourceSansPro-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic; }
 .no-display {
-  display: none; }
+  display: none;
+}
 
 .tooltip-container {
   transform: translateZ(0);
@@ -98,66 +117,91 @@ h3 {
   background-color: #2d2d2d;
   color: #fff;
   border-radius: 4px;
-  opacity: 1; }
-  .tooltip-container[class*=" tooltip-"] {
-    -webkit-animation: tooltip-anim 0.8s;
-    -moz-animation: tooltip-anim 0.8s;
-    -o-animation: tooltip-anim 0.8s;
-    animation: tooltip-anim 0.8s; }
-  .tooltip-container::after {
-    position: absolute;
-    display: block;
-    content: ""; }
-  .tooltip-container.tooltip-left::after {
-    right: -8px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-style: solid;
-    border-width: 6px 0 6px 8px;
-    border-color: transparent transparent transparent #2d2d2d; }
-  .tooltip-container.tooltip-right::after {
-    left: -8px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-style: solid;
-    border-width: 6px 8px 6px 0;
-    border-color: transparent #2d2d2d transparent transparent; }
-  .tooltip-container.tooltip-center::after {
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-style: solid;
-    border-width: 0 6px 8px 6px;
-    border-color: transparent transparent #2d2d2d transparent; }
+  opacity: 1;
+}
+.tooltip-container[class*=" tooltip-"] {
+  -webkit-animation: tooltip-anim 0.8s;
+  animation: tooltip-anim 0.8s;
+}
+.tooltip-container::after {
+  position: absolute;
+  display: block;
+  content: "";
+}
+.tooltip-container.tooltip-left::after {
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent #2d2d2d;
+}
+.tooltip-container.tooltip-right::after {
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 6px 8px 6px 0;
+  border-color: transparent #2d2d2d transparent transparent;
+}
+.tooltip-container.tooltip-center-bottom::after, .tooltip-container.tooltip-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-color: transparent;
+}
+.tooltip-container.tooltip-center::after {
+  top: -8px;
+  border-width: 0 6px 8px 6px;
+  border-bottom-color: #2d2d2d;
+}
+.tooltip-container.tooltip-center-bottom::after {
+  bottom: -8px;
+  border-width: 8px 6px 0 6px;
+  border-top-color: #2d2d2d;
+}
 
 [data-tooltip] {
   cursor: pointer;
   color: #7cb342;
-  display: inline-block; }
+  display: inline-block;
+}
 
 @keyframes tooltip-anim {
   0% {
     opacity: 0;
-    transform: matrix(0.5, 0, 0, 0.8, 0, 0); }
+    transform: matrix(0.5, 0, 0, 0.8, 0, 0);
+  }
   20% {
-    transform: matrix(1.1, 0, 0, 1.1, 0, 0); }
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+  }
   40% {
-    opacity: 1; }
+    opacity: 1;
+  }
   70% {
-    transform: matrix(1, 0, 0, 1, 0, 0); }
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
   100% {
-    transform: matrix(1, 0, 0, 1, 0, 0); } }
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
 @-webkit-keyframes tooltip-anim {
   0% {
     opacity: 0;
-    transform: matrix(0.5, 0, 0, 0.8, 0, 0); }
+    transform: matrix(0.5, 0, 0, 0.8, 0, 0);
+  }
   20% {
-    transform: matrix(1.1, 0, 0, 1.1, 0, 0); }
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+  }
   40% {
-    opacity: 1; }
+    opacity: 1;
+  }
   70% {
-    transform: matrix(1, 0, 0, 1, 0, 0); }
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
   100% {
-    transform: matrix(1, 0, 0, 1, 0, 0); } }
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
 
 /*# sourceMappingURL=tooltip.css.map */

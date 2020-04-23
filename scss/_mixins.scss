@@ -10,14 +10,10 @@
 @mixin animation($values...) {
     // name, duration, timing-function, delay, direction, iteration-count, fill-mode, play-state
     -webkit-animation: $values;
-    -moz-animation: $values;
-    -o-animation: $values;
     animation: $values;
 }
 
 @mixin animation-play-state($value) {
     -webkit-animation-play-state: $value;
-    -moz-animation-play-state: $value;
-    -o-animation-play-state: $value;
     animation-play-state: $value;
 }

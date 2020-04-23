@@ -1,5 +1,4 @@
-@import "variables";
-@import "mixins";
+@use "mixins" as mx;
 @import "generic";
 
 // =======
@@ -18,7 +17,7 @@
     border-radius: 4px;
     opacity: 1; // scale animation setting
 
-    &[class*=" tooltip-"] { @include animation(tooltip-anim 0.8s); }
+    &[class*=" tooltip-"] { @include mx.animation(tooltip-anim 0.8s); }
 
     &::after {
         position: absolute;
@@ -51,15 +50,26 @@
     }
 
     // position arrow in the top center of the tooltip
+    &.tooltip-center-bottom::after,
     &.tooltip-center::after {
-        top: -8px;
         left: 50%;
         transform: translateX(-50%);
         border: {
             style: solid;
-            width: 0 6px 8px 6px;
-            color: transparent transparent #2d2d2d transparent;
+            color: transparent;
         }
+    }
+
+    &.tooltip-center::after {
+        top: -8px;
+        border-width: 0 6px 8px 6px;
+        border-bottom-color: #2d2d2d;
+    }
+
+    &.tooltip-center-bottom::after {
+        bottom: -8px;
+        border-width: 8px 6px 0 6px;
+        border-top-color: #2d2d2d;
     }
 }
 
@@ -69,7 +79,7 @@
     display: inline-block;
 }
 
-@include keyframes(tooltip-anim) {
+@include mx.keyframes(tooltip-anim) {
     0% {
         opacity: 0;
         transform: matrix(0.5, 0, 0, 0.8, 0, 0);
