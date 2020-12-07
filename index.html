@@ -14,41 +14,45 @@
     <p>You can download the code from <a href="https://github.com/mirelvt/js-css-tooltip">github.</a></p>
     <h3>Example</h3>
     <p>
-        <span data-tooltip="Mijn tooltip">Hover me</span> ipsum dolor sit, consectetur
-        adipisicing elit. Aliquam, illo ut impedit! Quisquam fuga quo est?
+        <span data-tooltip="Mijn tooltip" aria-describedby="tooltipText" tabindex="0">Hover me</span>
+        ipsum dolor sit, consectetur adipisicing elit. Aliquam, illo ut impedit! Quisquam fuga quo est?
         Nam alias, aliquam suscipit, atque, adipisci necessitatibus sunt dolore
         non iste debitis laboriosam
-        <span data-tooltip="Lorem ipsum adipisci necessitatibus sunt dolore non iste">Tooltip with a long description</span>.
+        <span data-tooltip="Lorem ipsum adipisci necessitatibus sunt dolore non iste"
+            aria-describedby="tooltipText" tabindex="0">Tooltip with a long description</span>.
     </p>
     <span class="tooltip-example-left"
-            data-tooltip="Tooltip in the left corner of the viewport">tooltip</span>
+            data-tooltip="Tooltip in the left corner of the viewport"
+            aria-describedby="tooltipText" tabindex="0">tooltip</span>
     <span class="tooltip-example-right"
-            data-tooltip="Tooltip in the right corner">tooltip</span>
+            data-tooltip="Tooltip in the right corner"
+            aria-describedby="tooltipText" tabindex="0">tooltip</span>
     <div class="overflow-test">
-        <span data-tooltip="Tooltip used in an overflow:hidden element">
-            Tooltip in an overflow:hidden container
-        </span>
+        <span data-tooltip="Tooltip used in an overflow:hidden element"
+            aria-describedby="tooltipText" tabindex="0">Tooltip in an overflow:hidden container</span>
     </div>
     <p>
-        <span data-tooltip="Mijn tooltip">Hover me</span> ipsum dolor sit, consectetur
-        adipisicing elit. Aliquam, illo ut impedit! Quisquam fuga quo est?
+        <span data-tooltip="Mijn tooltip" aria-describedby="tooltipText" tabindex="0">Hover me</span>
+        ipsum dolor sit, consectetur adipisicing elit. Aliquam, illo ut impedit! Quisquam fuga quo est?
         Nam alias, aliquam suscipit, atque, adipisci necessitatibus sunt dolore
         non iste debitis laboriosam.
     </p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, veniam ipsa culpa vero suscipit consequuntur eligendi deleniti ducimus architecto commodi quod, est amet, laborum nisi asperiores debitis, pariatur excepturi quae.
-        <span data-tooltip="Lorem ipsum adipisci necessitatibus sunt dolore non iste">Tooltip with a long description</span>.
+        <span data-tooltip="Lorem ipsum adipisci necessitatibus sunt dolore non iste"
+            aria-describedby="tooltipText" tabindex="0">Tooltip with a long description</span>.
     </p>
     <span class="tooltip-example-left"
-            data-tooltip="Tooltip in the left corner of the viewport">tooltip</span>
+            data-tooltip="Tooltip in the left corner of the viewport"
+            aria-describedby="tooltipText" tabindex="0">tooltip</span>
     <span class="tooltip-example-right"
-            data-tooltip="Tooltip in the right corner">tooltip</span>
+            data-tooltip="Tooltip in the right corner"
+            aria-describedby="tooltipText" tabindex="0">tooltip</span>
     <div class="overflow-test">
-        <span data-tooltip="Tooltip used in an overflow:hidden element">
-            Tooltip in an overflow:hidden container
-        </span>
+        <span data-tooltip="Tooltip used in an overflow:hidden element"
+            aria-describedby="tooltipText" tabindex="0">Tooltip in an overflow:hidden container</span>
     </div>
 </div>
-<div class="tooltip-container no-display"></div>
-<script src="js/tooltip.src.js" type="text/javascript"></script>
+<div class="tooltip-container" role="alertdialog" id="tooltipText" aria-hidden="true" aria-live="polite"></div>
+<script defer src="js/tooltip.min.js" type="text/javascript"></script>
 </body>
 </html>

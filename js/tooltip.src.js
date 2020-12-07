@@ -1,10 +1,10 @@
 /*
- * JS CSS Tooltip v1.2.4
+ * JS CSS Tooltip v2.0
  * https://github.com/mirelvt/js-css-tooltip
  *
  * Released under the MIT license
  *
- * Date: 2020-04-24
+ * Date: 2020-12-07
  */
 
 (function() {
@@ -36,7 +36,6 @@
             // Position tooltip on the left side of the elm if the elm touches
             // the viewports right edge and elm width is < 50px.
             if (elm_edges.left > viewport_edges && elm_edges.width < 50) {
-                // tooltip.className = 'tooltip-container tooltip-left';
                 tooltip.style.left = (elm_edges.left - (tooltip.offsetWidth + elm_edges.width)) + 'px';
                 tooltip.style.top = elm.offsetTop + 'px';
             // Position tooltip on the left side of the elm if the elm touches
@@ -62,15 +61,53 @@
         }
     };
 
-    function showTooltip(evt) {
+    function showTooltipHover(evt) {
         const item = Object.create(Tooltip);
-        item.create(tooltip, evt.currentTarget);
-        item.position(tooltip, evt.currentTarget);
+        const elm = evt.currentTarget;
+
+        tooltip.setAttribute('aria-hidden', false);
+        item.create(tooltip, elm);
+        item.position(tooltip, elm);
+    }
+
+    function showTooltipKeyUp(evt) {
+        const item = Object.create(Tooltip);
+        const elm = evt.currentTarget;
+
+        tooltip.setAttribute('aria-hidden', false);
+
+        // Show tooltip on 'TAB'-key
+        if (evt.keyCode == '9' ) {
+            // First clean up:
+            if (tooltip.firstChild) {
+                tooltip.removeChild(tooltip.firstChild);
+                tooltip.removeAttribute('style');
+            }
+            // Then set tooltip:
+            item.create(tooltip, elm);
+            item.position(tooltip, elm);
+        }
+    }
+
+    function hideTooltipHover() {
+        hideTooltip();
+    }
+
+    function hideTooltipKeyUp(evt) {
+        // 27 = 'ESC'-key
+        if (evt.keyCode == '27')
+            hideTooltip();
+    }
+
+    function hideTooltipClick(evt) {
+        if (!evt.target.hasAttribute('data-tooltip'))
+            hideTooltip();
     }
 
     function hideTooltip() {
+        tooltip.setAttribute('aria-hidden', true);
         tooltip.className = 'tooltip-container no-display';
-        tooltip.removeChild(tooltip.firstChild);
+        tooltip.textContent = '';
         tooltip.removeAttribute('style');
     }
 
@@ -79,9 +116,16 @@
         const tooltip_elms = document.documentElement.querySelectorAll('[data-tooltip]');
 
         Array.prototype.forEach.call(tooltip_elms, function(elm) {
-            elm.addEventListener('mouseover', showTooltip, false);
-            elm.addEventListener('mouseout', hideTooltip, false);
+            elm.addEventListener('mouseover', showTooltipHover);
+            elm.addEventListener('mouseout', hideTooltipHover);
+            elm.addEventListener('keyup', showTooltipKeyUp);
+            elm.addEventListener('keyup', hideTooltipKeyUp);
         });
+
+        if (tooltip) {
+            document.addEventListener('keyup', hideTooltipKeyUp);
+            document.addEventListener('click', hideTooltipClick);
+        }
     }
 
     document.addEventListener('DOMContentLoaded', onReady, false);
