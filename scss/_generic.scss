@@ -1,23 +1,33 @@
-@use "variables" as vr;
-@use "mixins" as mx;
-@import "fonts";
+@forward "fonts";
+
+:root {
+    color-scheme: light dark;
+    --c-text: light-dark(#3c4946, #b3bbb9);
+    --c-main: #7cb342;
+    --c-hover: #558b2f;
+    --body-bg: light-dark(#fff, #000);
+
+    --font-main: "Source Sans Pro", arial, helvetica, sans-serif;
+}
 
 * { box-sizing: border-box; }
 
 // *1: Specifies a size adjustment for displaying text content on smartphones.
 // *2: Improve text-rendering in Webkit browsers and firefox on OSX.
-:root {
+html {
     position: relative;
     height: 100%;
     min-height: 100%;
-    font-family: vr.$font-main;
+    font-family: var(--font-main);
     font-size: 62.5%;
     -webkit-font-smoothing: antialiased; // *2
     -moz-osx-font-smoothing: grayscale; // *2
     -ms-text-size-adjust: 100%; // *1
     -moz-text-size-adjust: 100%; // *1
     -webkit-text-size-adjust: 100%; // *1
-    color: vr.$c-text;
+    color: var(--c-text);
+    background-color: var(--body-bg);
+
 }
 
 body {
@@ -33,16 +43,16 @@ p {
 
 a {
     transition: color 0.25s;
-    color: vr.$c-main;
+    color: var(--c-main);
 
-    &:hover { color: vr.$c-hover; }
+    &:hover { color: var(--c-hover); }
 }
 
 h1,
 h3 {
     margin-top: 0;
     font-weight: normal;
-    color: vr.$c-main;
+    color: var(--c-main);
     line-height: 100%;
 }
 
@@ -58,29 +68,26 @@ h3 {
 
 .visualwrapper {
     width: 100%;
-    max-width: 1200px;
+    max-width: 120rem;
     min-height: 100%;
     margin: 0 auto;
     padding: 2rem 8rem;
-    background-color: #fff;
 }
 
 // Just an example of elm which are positioned on the left or right of the window
-.tooltip-example {
-    &-right,
-    &-left {
-        position: absolute;
-    }
+.tooltip-example-right,
+.tooltip-example-left {
+    position: absolute;
+}
 
-    &-right {
-        top: 0;
-        right: 0;
-    }
+.tooltip-example-right {
+    top: 0;
+    right: 0;
+}
 
-    &-left {
-        top: 50%;
-        left: 0;
-    }
+.tooltip-example-left {
+    top: 50%;
+    left: 0;
 }
 
 .overflow-test {
@@ -88,4 +95,3 @@ h3 {
     overflow: hidden;
     background-color: rgba(#ccc, 0.5);
 }
-

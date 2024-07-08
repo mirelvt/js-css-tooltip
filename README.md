@@ -1,3 +1,7 @@
+# js-css-tooltip 3.0
+
+Use CSS variables and refactor Javascript code and CSS. Add dark mode colors.
+
 # js-css-tooltip 2.0
 
 A custom tooltip which uses vanilla javascript and CSS3 animation. Version 2.0 now also supports keyboard navigation and is accessible with speech software. (Tested with MacOS voiceOver).

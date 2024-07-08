@@ -1,10 +1,10 @@
 /*
- * JS CSS Tooltip v2.0
+ * JS CSS Tooltip v3.0
  * https://github.com/mirelvt/js-css-tooltip
  *
  * Released under the MIT license
  *
- * Date: 2020-12-07
+ * Date: 2024-07-08
  */
 
 (function() {
@@ -21,12 +21,13 @@
             tooltip.appendChild(tooltip_text);
             // Remove no-display + set the correct classname based on the position
             // of the elm.
+            tooltip.classList.remove('no-display');
             if (elm_edges.left > window.innerWidth - 100) {
-                tooltip.className = 'tooltip-container tooltip-left';
+                tooltip.classList.add('tooltip-left');
             } else if ((elm_edges.left + (elm_edges.width / 2)) < 100) {
-                tooltip.className = 'tooltip-container tooltip-right';
+                tooltip.classList.add('tooltip-right');
             } else {
-                tooltip.className = 'tooltip-container tooltip-center';
+                tooltip.classList.add('tooltip-center');
             }
         },
         position: function(tooltip, elm) {
@@ -111,22 +112,21 @@
         tooltip.removeAttribute('style');
     }
 
-    function onReady() {
+
+    document.addEventListener('DOMContentLoaded', () => {
         tooltip = document.documentElement.querySelector('.tooltip-container');
         const tooltip_elms = document.documentElement.querySelectorAll('[data-tooltip]');
 
-        Array.prototype.forEach.call(tooltip_elms, function(elm) {
+        for (let elm of tooltip_elms) {
             elm.addEventListener('mouseover', showTooltipHover);
             elm.addEventListener('mouseout', hideTooltipHover);
             elm.addEventListener('keyup', showTooltipKeyUp);
             elm.addEventListener('keyup', hideTooltipKeyUp);
-        });
+        }
 
         if (tooltip) {
             document.addEventListener('keyup', hideTooltipKeyUp);
             document.addEventListener('click', hideTooltipClick);
         }
-    }
-
-    document.addEventListener('DOMContentLoaded', onReady, false);
+    });
 })();

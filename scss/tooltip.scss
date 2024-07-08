@@ -1,52 +1,75 @@
-@use "mixins" as mx;
-@import "generic";
+@forward "_generic";
 
 // =======
 // TOOLTIP
 // -------
+
+:root {
+    color-scheme: light dark;
+    --tooltip-arrow: 0 0 0 0;
+    --tooltip-arrow-c: transparent;
+
+    --tooltip-bg: light-dark(#2d2d2d, #fff);
+    --tooltip-c: light-dark(#fff, #2d2d2d);
+}
+
 .no-display { display: none; }
 
 .tooltip-container {
     transform: translateZ(0); // GPU
     position: absolute;
-    max-width: 200px;
-    padding: 8px 10px 10px;
+    max-width: 20rem;
+    padding: 0.8rem 1rem 1rem;
     font-size: 1.6rem;
-    background-color: #2d2d2d;
-    color: #fff;
-    border-radius: 4px;
+    background-color: var(--tooltip-bg);
+    color: var(--tooltip-c);
+    border-radius: 0.4rem;
     opacity: 1; // scale animation setting
 
-    &[class*=" tooltip-"] { @include mx.animation(tooltip-anim 0.8s); }
+
+    &[class*=" tooltip-"] { animation: tooltip-anim 0.5s; }
+
+    @keyframes tooltip-anim {
+        0% {
+            opacity: 0;
+            transform: matrix(0.5, 0, 0, 0.8, 0, 0);
+        }
+
+        20%  { transform: matrix(1.1, 0, 0, 1.1, 0, 0); }
+        40%  { opacity: 1; }
+        70%  { transform: matrix(1, 0, 0, 1, 0, 0); }
+        100% { transform: matrix(1, 0, 0, 1, 0, 0); }
+    }
 
     &::after {
         position: absolute;
         display: block;
         content: "";
+        border: {
+            style: solid;
+            width: var(--tooltip-arrow);
+            color: var(--tooltip-arrow-c);
+        }
     }
 
     // position arrow on the right of the tooltip
     &.tooltip-left::after {
-        right: -8px;
+        --tooltip-arrow: 0.6rem 0 0.6rem 0.8rem;
+        --tooltip-arrow-c: transparent transparent transparent var(--tooltip-bg);
+
+        right: -0.8rem;
         top: 50%;
         transform: translateY(-50%);
-        border: {
-            style: solid;
-            width: 6px 0 6px 8px;
-            color: transparent transparent transparent #2d2d2d;
-        }
     }
 
     // position arrow on the left of the tooltip
     &.tooltip-right::after {
-        left: -8px;
+        --tooltip-arrow: 0.6rem 0.8rem 0.6rem 0;
+        --tooltip-arrow-c: transparent var(--tooltip-bg) transparent transparent;
+
+        left: -0.8rem;
         top: 50%;
         transform: translateY(-50%);
-        border: {
-            style: solid;
-            width: 6px 8px 6px 0;
-            color: transparent #2d2d2d transparent transparent;
-        }
     }
 
     // position arrow in the top center of the tooltip
@@ -54,22 +77,18 @@
     &.tooltip-center::after {
         left: 50%;
         transform: translateX(-50%);
-        border: {
-            style: solid;
-            color: transparent;
-        }
     }
 
     &.tooltip-center::after {
-        top: -8px;
-        border-width: 0 6px 8px 6px;
-        border-bottom-color: #2d2d2d;
+        --tooltip-arrow: 0 0.6rem 0.8rem 0.6rem;
+        --tooltip-arrow-c: transparent transparent var(--tooltip-bg) transparent;
+        top: -0.8rem;
     }
 
     &.tooltip-center-bottom::after {
-        bottom: -8px;
-        border-width: 8px 6px 0 6px;
-        border-top-color: #2d2d2d;
+        --tooltip-arrow: 0.8rem 0.6rem 0 0.6rem;
+        --tooltip-arrow-c: var(--tooltip-bg) transparent transparent transparent;
+        bottom: -0.8rem;
     }
 }
 
@@ -77,18 +96,6 @@
     cursor: pointer;
     color: #7cb342;
     display: inline-block;
-}
-
-@include mx.keyframes(tooltip-anim) {
-    0% {
-        opacity: 0;
-        transform: matrix(0.5, 0, 0, 0.8, 0, 0);
-    }
-
-    20% { transform: matrix(1.1, 0, 0, 1.1, 0, 0); }
-    40% { opacity: 1; }
-    70% { transform: matrix(1, 0, 0, 1, 0, 0); }
-    100% { transform: matrix(1, 0, 0, 1, 0, 0); }
 }
 
 // ------------
